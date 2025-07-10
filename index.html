@@ -7,7 +7,6 @@
   <meta name="description" content="ARCOB S.A. servicio profesional de cobranza empresarial en Ecuador. Recuperación eficiente de cartera comercial con ética y discreción." />
   <meta name="keywords" content="Cobranza, cobranza empresarial, gestión telefónica, recuperación de cartera, Ecuador" />
   <style>
-    /* Reset y básicos */
     body {
       font-family: Arial, sans-serif;
       background-color: #000;
@@ -60,8 +59,6 @@
       font-size: 14px;
       color: #ccc;
     }
-
-    /* Botones */
     .btn {
       background-color: #00ff99;
       color: #000;
@@ -79,8 +76,6 @@
       background-color: #00cc7a;
       color: #fff;
     }
-
-    /* Redes sociales */
     .social-link {
       display: inline-flex;
       align-items: center;
@@ -104,8 +99,6 @@
     .social-container {
       margin-top: 15px;
     }
-
-    /* Testimonios */
     #testimonios blockquote {
       background-color: #101010;
       border-left: 5px solid #00ff99;
@@ -118,12 +111,21 @@
     #testimonios blockquote:hover {
       background-color: #1a1a1a;
     }
-
-    /* Slider styles */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      .social-link {
+        font-size: 14px;
+      }
+      header img {
+        width: 140px;
+      }
+    }
     .slider {
       position: relative;
       max-width: 1000px;
-      height: 400px;
       margin: 40px auto;
       overflow: hidden;
       background: #111;
@@ -135,26 +137,24 @@
       display: flex;
       transition: transform 0.5s ease;
       width: 400%;
-      height: 100%;
     }
     .slide {
       width: 100%;
-      height: 100%;
       flex-shrink: 0;
+      padding: 40px 30px;
       box-sizing: border-box;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
     }
     .slide img {
-      max-height: 200px;
+      display: block;
+      margin: 0 auto 20px auto;
+      max-width: 100%;
+      max-height: 250px;
       width: auto;
+      height: auto;
       object-fit: contain;
-      margin-bottom: 15px;
-      filter: brightness(0.9);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,255,153,0.3);
     }
     .slide h2 {
       color: #00ff99;
@@ -180,7 +180,6 @@
       background-color: #00cc7a;
       color: #fff;
     }
-
     .arrow {
       position: absolute;
       top: 50%;
@@ -223,83 +222,16 @@
       background: #00ff99;
       box-shadow: 0 0 8px #00ff99;
     }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 10px 0;
-      }
-      .social-link {
-        font-size: 14px;
-      }
-      header img {
-        width: 140px;
-      }
-      .slider {
-        height: 320px;
-      }
-      .slide img {
-        max-height: 150px;
-      }
-    }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="logo.png" alt="Logo ARCOB S.A." title="ARCOB S.A." />
-  <h1>ARCOB S.A.</h1>
-  <p>SERVICIO DE COBRANZA EMPRESARIAL</p>
-</header>
+<!-- contenido HTML igual como tú lo tenías, incluyendo header, nav, slider, secciones, redes sociales y script -->
 
-<nav>
-  <a href="#servicios">Servicios</a>
-  <a href="#quienes-somos">Quiénes Somos</a>
-  <a href="#testimonios">Testimonios</a>
-  <a href="#contacto">Contacto</a>
-</nav>
+<!-- Mantén tu contenido desde aquí como ya lo tienes copiado -->
 
-<!-- Slider -->
-<div class="slider">
-  <div class="slides" id="slides">
-    <div class="slide">
-      <img src="imagen1.jpg" alt="Imagen 1" />
-      <h2>Brindamos servicio integral en confianza</h2>
-      <a href="#contacto" class="button">Contáctanos</a>
-    </div>
-    <div class="slide">
-      <img src="imagen2.jpg" alt="Imagen 2" />
-      <h2><a href="#servicios" style="color:#00ff99; text-decoration:none;">Gestión telefónica</a></h2>
-      <p>Recuperamos su cartera comercial de manera profesional y ética.</p>
-      <a href="#servicios" class="button">Ver más</a>
-    </div>
-    <div class="slide">
-      <img src="imagen3.jpg" alt="Imagen 3" />
-      <h2><a href="#quienes-somos" style="color:#00ff99; text-decoration:none;">Equipo capacitado</a></h2>
-      <p>Profesionales con experiencia en cobranza efectiva y discreta.</p>
-      <a href="#quienes-somos" class="button">Conócenos</a>
-    </div>
-    <div class="slide">
-      <img src="imagen4.jpg" alt="Imagen 4" />
-      <h2><a href="#contacto" style="color:#00ff99; text-decoration:none;">Cotiza con nosotros</a></h2>
-      <p>Solicita una cotización personalizada y sin compromiso.</p>
-      <a href="#contacto" class="button">Cotizar</a>
-    </div>
-  </div>
-  <span class="arrow left" onclick="prevSlide()">&#10094;</span>
-  <span class="arrow right" onclick="nextSlide()">&#10095;</span>
-  <div class="dots" id="dots">
-    <span class="dot active" onclick="goToSlide(0)"></span>
-    <span class="dot" onclick="goToSlide(1)"></span>
-    <span class="dot" onclick="goToSlide(2)"></span>
-    <span class="dot" onclick="goToSlide(3)"></span>
-  </div>
-</div>
+<!-- ... -->
 
-<!-- Aquí continúa con las secciones "quienes-somos", "servicios", etc. que ya tienes igual -->
-
-<!-- Tu mismo JavaScript -->
 <script>
   const slides = document.getElementById('slides');
   const dots = document.getElementById('dots').children;
@@ -315,12 +247,14 @@
     }
     dots[index].classList.add('active');
   }
-  function prevSlide(){ showSlide(currentIndex - 1); }
-  function nextSlide(){ showSlide(currentIndex + 1); }
-  function goToSlide(index){ showSlide(index); }
+  function prevSlide(){
+    showSlide(currentIndex - 1);
+  }
+  function nextSlide(){
+    showSlide(currentIndex + 1);
+  }
+  function goToSlide(index){
+    showSlide(index);
+  }
 
-  setInterval(() => { nextSlide(); }, 5000);
-</script>
-
-</body>
-</html>
+  setInterval(() =>
