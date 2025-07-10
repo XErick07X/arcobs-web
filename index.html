@@ -90,12 +90,6 @@
     .social-link:hover {
       color: #00ff99;
     }
-    .social-link svg {
-      width: 24px;
-      height: 24px;
-      fill: #00ff99;
-      transition: fill 0.3s ease;
-    }
     .social-container {
       margin-top: 15px;
     }
@@ -146,15 +140,9 @@
       text-align: center;
     }
     .slide img {
-      display: block;
-      margin: 0 auto 20px auto;
-      max-width: 100%;
-      max-height: 250px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,255,153,0.3);
+      max-width: 220px;
+      margin-bottom: 20px;
+      filter: brightness(0.9);
     }
     .slide h2 {
       color: #00ff99;
@@ -226,11 +214,113 @@
 </head>
 <body>
 
-<!-- contenido HTML igual como tú lo tenías, incluyendo header, nav, slider, secciones, redes sociales y script -->
+<header>
+  <img src="logo.png" alt="Logo ARCOB S.A." title="ARCOB S.A." />
+  <h1>ARCOB S.A.</h1>
+  <p>SERVICIO DE COBRANZA EMPRESARIAL</p>
+</header>
 
-<!-- Mantén tu contenido desde aquí como ya lo tienes copiado -->
+<nav>
+  <a href="#servicios">Servicios</a>
+  <a href="#quienes-somos">Quiénes Somos</a>
+  <a href="#testimonios">Testimonios</a>
+  <a href="#contacto">Contacto</a>
+</nav>
 
-<!-- ... -->
+<div class="slider">
+  <div class="slides" id="slides">
+    <div class="slide">
+      <img src="imagen1.jpg" alt="Imagen 1" />
+      <h2>Brindamos servicio integral en confianza</h2>
+      <a href="#contacto" class="button">Contáctanos</a>
+    </div>
+    <div class="slide">
+      <img src="imagen2.jpg" alt="Imagen 2" />
+      <h2><a href="#servicios" style="color:#00ff99; text-decoration:none;">Gestión telefónica</a></h2>
+      <p>Recuperamos su cartera comercial de manera profesional y ética.</p>
+      <a href="#servicios" class="button">Ver más</a>
+    </div>
+    <div class="slide">
+      <img src="imagen3.jpg" alt="Imagen 3" />
+      <h2><a href="#quienes-somos" style="color:#00ff99; text-decoration:none;">Equipo capacitado</a></h2>
+      <p>Profesionales con experiencia en cobranza efectiva y discreta.</p>
+      <a href="#quienes-somos" class="button">Conócenos</a>
+    </div>
+    <div class="slide">
+      <img src="imagen4.jpg" alt="Imagen 4" />
+      <h2><a href="#contacto" style="color:#00ff99; text-decoration:none;">Cotiza con nosotros</a></h2>
+      <p>Solicita una cotización personalizada y sin compromiso.</p>
+      <a href="#contacto" class="button">Cotizar</a>
+    </div>
+  </div>
+  <span class="arrow left" onclick="prevSlide()">&#10094;</span>
+  <span class="arrow right" onclick="nextSlide()">&#10095;</span>
+  <div class="dots" id="dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+    <span class="dot" onclick="goToSlide(3)"></span>
+  </div>
+</div>
+
+<section id="quienes-somos">
+  <h2 style="color:#00ff99;">¿Quiénes Somos?</h2>
+  <p>
+    En ARCOB S.A., nos especializamos en la recuperación de cartera comercial a
+    través de gestión telefónica profesional. Nuestro equipo altamente
+    capacitado trabaja con eficiencia, ética y discreción para recuperar sus
+    cuentas pendientes sin comprometer la relación con sus clientes.
+  </p>
+</section>
+
+<section id="servicios">
+  <h2>Servicios</h2>
+  <ul>
+    <li>Gestión de cobranza preventiva y judicial vía telefónica</li>
+    <li>Seguimiento personalizado de cuentas morosas</li>
+    <li>Informes periódicos de resultados</li>
+    <li>Estrategias de contacto adaptadas al perfil del deudor</li>
+  </ul>
+  <a
+    href="https://wa.me/593981500798?text=Hola%2C%20estoy%20interesado%20en%20una%20cotizaci%C3%B3n%20de%20sus%20servicios."
+    class="btn"
+    target="_blank"
+  >Solicitar una Cotización</a>
+</section>
+
+<section id="testimonios">
+  <h2>Testimonios</h2>
+  <blockquote>
+    "Gracias a ARCOB S.A. logramos recuperar el 92% de nuestra cartera vencida en menos de tres meses, siempre con respeto hacia nuestros clientes."
+  </blockquote>
+  <p>- Corporación Inversiones Altamira</p>
+  <blockquote>
+    "El equipo de ARCOB S.A. demostró gran profesionalismo y discreción, ayudándonos a mantener excelentes relaciones comerciales durante el proceso de cobranza."
+  </blockquote>
+  <p>- Servicios Financieros Andina</p>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p><strong>Email:</strong> contacto@arcobsa.com</p>
+  <p><strong>Teléfono:</strong> 0981500798</p>
+  <p><strong>Dirección:</strong> Guayaquil, Ecuador</p>
+
+  <div class="social-container">
+    <a href="https://wa.me/593981500798" target="_blank" class="social-link">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" width="24" height="24" style="filter: invert(59%) sepia(77%) saturate(386%) hue-rotate(101deg) brightness(100%) contrast(101%);">
+      Chatear por WhatsApp
+    </a>
+    <a href="https://instagram.com/arcob_sa" target="_blank" class="social-link">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="24" height="24" style="filter: invert(59%) sepia(77%) saturate(386%) hue-rotate(101deg) brightness(100%) contrast(101%);">
+      Visítanos en Instagram
+    </a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 ARCOB S.A. - Todos los derechos reservados.
+</footer>
 
 <script>
   const slides = document.getElementById('slides');
@@ -247,15 +337,9 @@
     }
     dots[index].classList.add('active');
   }
-  function prevSlide(){
-    showSlide(currentIndex - 1);
-  }
-  function nextSlide(){
-    showSlide(currentIndex + 1);
-  }
-  function goToSlide(index){
-    showSlide(index);
-  }
+  function prevSlide(){ showSlide(currentIndex - 1); }
+  function nextSlide(){ showSlide(currentIndex + 1); }
+  function goToSlide(index){ showSlide(index); }
 
   setInterval(() => {
     nextSlide();
