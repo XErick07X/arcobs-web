@@ -61,7 +61,7 @@
       color: #ccc;
     }
     /* Botones */
-    .btn, .btn-submit {
+    .btn {
       background-color: #00ff99;
       color: #000;
       padding: 12px 25px;
@@ -74,7 +74,7 @@
       border: none;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
-    .btn:hover, .btn-submit:hover {
+    .btn:hover {
       background-color: #00cc7a;
       color: #fff;
     }
@@ -101,25 +101,6 @@
     }
     .social-container {
       margin-top: 15px;
-    }
-    /* Formulario */
-    form {
-      max-width: 500px;
-      margin-top: 20px;
-    }
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border-radius: 5px;
-      border: none;
-      font-size: 16px;
-    }
-    textarea {
-      resize: vertical;
-      min-height: 100px;
     }
     /* Testimonios */
     #testimonios blockquote {
@@ -193,14 +174,14 @@
 <section id="testimonios">
   <h2>Testimonios</h2>
   <blockquote>
-    "Gracias a ARCOB S.A. recuperamos el 95% de nuestra cartera pendiente."
+    "Gracias a ARCOB S.A. logramos recuperar el 92% de nuestra cartera vencida en menos de tres meses, siempre con respeto hacia nuestros clientes."
   </blockquote>
-  <p>- Empresa XYZ</p>
+  <p>- Corporación Inversiones Altamira</p>
+
   <blockquote>
-    "Su ética y profesionalismo nos permitieron mantener buenas relaciones con
-    nuestros clientes morosos."
+    "El equipo de ARCOB S.A. demostró gran profesionalismo y discreción, ayudándonos a mantener excelentes relaciones comerciales durante el proceso de cobranza."
   </blockquote>
-  <p>- Cliente ABC</p>
+  <p>- Servicios Financieros Andina</p>
 </section>
 
 <section id="contacto">
@@ -208,14 +189,6 @@
   <p><strong>Email:</strong> contacto@arcobsa.com</p>
   <p><strong>Teléfono:</strong> 0981500798</p>
   <p><strong>Dirección:</strong> Guayaquil, Ecuador</p>
-
-  <!-- Formulario de contacto -->
-  <form action="https://formspree.io/f/your-form-id" method="POST" novalidate>
-    <input type="text" name="nombre" placeholder="Tu nombre" required />
-    <input type="email" name="email" placeholder="Tu email" required />
-    <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
-    <button type="submit" class="btn-submit">Enviar</button>
-  </form>
 
   <!-- Redes sociales -->
   <div class="social-container">
@@ -250,22 +223,6 @@
     </a>
   </div>
 
-  <!-- Botones para compartir en redes sociales -->
-  <div style="margin-top: 30px;">
-    <h3>Comparte esta página</h3>
-    <a
-      href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftu-sitio-web.com"
-      target="_blank"
-      class="social-link"
-      aria-label="Compartir en Facebook"
-      >
-      <svg viewBox="0 0 24 24" aria-hidden="true" style="fill:#3b5998; width:24px; height:24px;">
-        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987H7.898v-2.89h2.54v-2.203c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.876h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/>
-      </svg>
-      Facebook
-    </a>
-    <!-- Puedes agregar más redes sociales similares -->
-  </div>
 </section>
 
 <footer>
