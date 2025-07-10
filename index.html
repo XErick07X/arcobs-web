@@ -43,6 +43,7 @@
       margin: 0 15px;
       font-weight: bold;
       transition: color 0.3s ease;
+      font-size: 18px;
     }
     nav a:hover {
       color: #66ffb3;
@@ -81,20 +82,19 @@
       align-items: center;
       gap: 8px;
       text-decoration: none;
-      color: #d3f7e8;
+      color: #00ff99;
       margin-top: 10px;
       font-weight: bold;
       font-size: 16px;
       transition: color 0.3s ease;
     }
     .social-link:hover {
-      color: #00ff99;
+      color: #66ffb3;
     }
     .social-link svg {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       fill: #00ff99;
-      transition: fill 0.3s ease;
     }
     .social-container {
       margin-top: 15px;
@@ -106,162 +106,193 @@
       padding: 15px 20px;
       font-style: italic;
       color: #aaffcc;
-      transition: background-color 0.3s ease;
-    }
-    #testimonios blockquote:hover {
-      background-color: #1a1a1a;
     }
     @media (max-width: 600px) {
       nav a {
         display: block;
         margin: 10px 0;
       }
-      .social-link {
-        font-size: 14px;
-      }
       header img {
         width: 140px;
       }
     }
-    .slider {
+
+    /* SLIDER DE IMÁGENES */
+    .slide-container {
       position: relative;
-      max-width: 1000px;
+      width: 800px;
+      height: 350px;
+      border: 3px solid #ede6d6;
+      box-shadow: 0 0 8px 2px rgba(0,0,0,0.2);
       margin: 40px auto;
       overflow: hidden;
-      background: #111;
-      color: #d3f7e8;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,255,153,0.4);
     }
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease;
-      width: 400%;
-    }
-    .slide {
+    .slides img {
       width: 100%;
-      flex-shrink: 0;
-      padding: 40px 30px;
-      box-sizing: border-box;
-      text-align: center;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
     }
-    .slide img {
-      display: block;
-      margin: 0 auto 20px auto;
-      max-width: 100%;
-      max-height: 250px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,255,153,0.3);
+    .slides img.active {
+      opacity: 1;
+      z-index: 1;
     }
-    .slide h2 {
-      color: #00ff99;
-      margin-bottom: 10px;
-      font-size: 1.8em;
-    }
-    .slide p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-      color: #aaffcc;
-    }
-    .slide a.button {
-      display: inline-block;
-      background-color: #00ff99;
-      color: #000;
-      padding: 12px 28px;
-      border-radius: 5px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .slide a.button:hover {
-      background-color: #00cc7a;
-      color: #fff;
-    }
-    .arrow {
+    .buttons span {
       position: absolute;
       top: 50%;
-      font-size: 2.8em;
-      color: #00ff99;
-      cursor: pointer;
-      user-select: none;
       transform: translateY(-50%);
-      padding: 0 10px;
-      background: rgba(0,0,0,0.3);
-      border-radius: 50%;
-      transition: background-color 0.3s ease;
-      z-index: 10;
+      padding: 14px;
+      color: #eee;
+      font-size: 24px;
+      font-weight: bold;
+      border-radius: 3px;
+      user-select: none;
+      cursor: pointer;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.5);
     }
-    .arrow:hover {
-      background: rgba(0,255,153,0.8);
-      color: #000;
+    .buttons .next {
+      right: 20px;
     }
-    .arrow.left {
-      left: 10px;
+    .buttons .prev {
+      left: 20px;
     }
-    .arrow.right {
-      right: 10px;
-    }
-    .dots {
-      text-align: center;
-      padding: 15px 0 20px 0;
+    .dotsContainer {
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+      z-index: 3;
     }
     .dot {
-      display: inline-block;
-      height: 14px;
-      width: 14px;
-      margin: 0 7px;
-      background: #555;
+      width: 15px;
+      height: 15px;
+      border: 2px solid #bbb;
       border-radius: 50%;
+      background-color: #000;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
     .dot.active {
-      background: #00ff99;
-      box-shadow: 0 0 8px #00ff99;
+      background-color: #00ff99;
     }
   </style>
 </head>
 <body>
 
-<!-- contenido HTML igual como tú lo tenías, incluyendo header, nav, slider, secciones, redes sociales y script -->
+<header>
+  <img src="logo.png" alt="Logo ARCOB S.A." />
+  <h1>ARCOB S.A.</h1>
+  <p>SERVICIO DE COBRANZA EMPRESARIAL</p>
+</header>
 
-<!-- Mantén tu contenido desde aquí como ya lo tienes copiado -->
+<nav>
+  <a href="#servicios">Servicios</a>
+  <a href="#quienes-somos">Quiénes Somos</a>
+  <a href="#testimonios">Testimonios</a>
+  <a href="#contacto">Contacto</a>
+</nav>
 
-<!-- ... -->
+<!-- SLIDER -->
+<div class="slide-container">
+  <div class="slides">
+    <img src="imagen1.jpg" class="active">
+    <img src="imagen2.jpg">
+    <img src="imagen3.jpg">
+    <img src="imagen4.jpg">
+  </div>
+  <div class="buttons">
+    <span class="prev">&#10094;</span>
+    <span class="next">&#10095;</span>
+  </div>
+  <div class="dotsContainer">
+    <span class="dot active" onclick="showSlide(0)"></span>
+    <span class="dot" onclick="showSlide(1)"></span>
+    <span class="dot" onclick="showSlide(2)"></span>
+    <span class="dot" onclick="showSlide(3)"></span>
+  </div>
+</div>
+
+<section id="quienes-somos">
+  <h2>¿Quiénes Somos?</h2>
+  <p>En ARCOB S.A., nos especializamos en la recuperación de cartera comercial a través de gestión telefónica profesional. Nuestro equipo altamente capacitado trabaja con eficiencia, ética y discreción para recuperar sus cuentas pendientes sin comprometer la relación con sus clientes.</p>
+</section>
+
+<section id="servicios">
+  <h2>Servicios</h2>
+  <ul>
+    <li>Gestión de cobranza preventiva y judicial vía telefónica</li>
+    <li>Seguimiento personalizado de cuentas morosas</li>
+    <li>Informes periódicos de resultados</li>
+    <li>Estrategias de contacto adaptadas al perfil del deudor</li>
+  </ul>
+  <a href="https://wa.me/593981500798?text=Hola%2C%20estoy%20interesado%20en%20una%20cotizaci%C3%B3n%20de%20sus%20servicios." class="btn" target="_blank">Solicitar una Cotización</a>
+</section>
+
+<section id="testimonios">
+  <h2>Testimonios</h2>
+  <blockquote>"Gracias a ARCOB S.A. logramos recuperar el 92% de nuestra cartera vencida en menos de tres meses, siempre con respeto hacia nuestros clientes."</blockquote>
+  <p>- Corporación Inversiones Altamira</p>
+  <blockquote>"El equipo de ARCOB S.A. demostró gran profesionalismo y discreción, ayudándonos a mantener excelentes relaciones comerciales durante el proceso de cobranza."</blockquote>
+  <p>- Servicios Financieros Andina</p>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p><strong>Email:</strong> contacto@arcobsa.com</p>
+  <p><strong>Teléfono:</strong> 0981500798</p>
+  <p><strong>Dirección:</strong> Guayaquil, Ecuador</p>
+  <div class="social-container">
+    <a href="https://wa.me/593981500798" target="_blank" class="social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339-3.9 217.3-32 131.4 33.8S-4.3 259.1 43.6 348.8L0 512l173.9-45.4c81.4 22.4 168.3-3.3 220.1-66.2 51.9-62.9 61.1-153.8 15.2-225.3zM222.4 397.2c-47.8 0-95.7-13.2-137.7-39.2L65 393.9l15.4-57.4c-35.5-40.8-49.6-97.2-37.3-150 12.3-52.8 49.5-96.5 100.3-117.8 50.8-21.3 108.9-18.4 157.3 8 48.4 26.3 81.6 74.5 89.2 129.3 7.6 54.7-9.5 110.6-45.6 151.9-36.1 41.2-88.2 64.4-141.9 64.4z"/></svg>
+      WhatsApp
+    </a>
+    <a href="https://instagram.com/arcob_sa" target="_blank" class="social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224,202.7A53.3,53.3,0,1,0,277.3,256,53.38,53.38,0,0,0,224,202.7ZM398.8,80A48,48,0,0,0,352,33.2C316.8,32,128,32,128,32S39.2,32,33.2,33.2A48,48,0,0,0-1.6,80c-1.2,6-1.2,184.8,0,190.8A48,48,0,0,0,33.2,336C39.2,337.2,128,337.2,128,337.2s188.8,0,224-.8A48,48,0,0,0,398.8,270.8C400,264.8,400,96,398.8,90ZM224,338.2A82.2,82.2,0,1,1,306.2,256,82.27,82.27,0,0,1,224,338.2ZM370.8,118.4a19.2,19.2,0,1,1,19.2-19.2A19.2,19.2,0,0,1,370.8,118.4Z"/></svg>
+      Instagram
+    </a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 ARCOB S.A. - Todos los derechos reservados.
+</footer>
 
 <script>
-  const slides = document.getElementById('slides');
-  const dots = document.getElementById('dots').children;
-  let currentIndex = 0;
+  const slides = document.querySelectorAll('.slides img');
+  const dots = document.querySelectorAll('.dot');
+  const next = document.querySelector('.next');
+  const prev = document.querySelector('.prev');
+  let current = 0;
 
   function showSlide(index) {
-    if(index < 0) index = dots.length - 1;
-    if(index >= dots.length) index = 0;
-    currentIndex = index;
-    slides.style.transform = 'translateX(' + (-index * 100) + '%)';
-    for(let i=0; i<dots.length; i++){
-      dots[i].classList.remove('active');
-    }
-    dots[index].classList.add('active');
-  }
-  function prevSlide(){
-    showSlide(currentIndex - 1);
-  }
-  function nextSlide(){
-    showSlide(currentIndex + 1);
-  }
-  function goToSlide(index){
-    showSlide(index);
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
   }
 
+  next.addEventListener('click', () => {
+    let newIndex = (current + 1) % slides.length;
+    showSlide(newIndex);
+  });
+
+  prev.addEventListener('click', () => {
+    let newIndex = (current - 1 + slides.length) % slides.length;
+    showSlide(newIndex);
+  });
+
   setInterval(() => {
-    nextSlide();
+    let newIndex = (current + 1) % slides.length;
+    showSlide(newIndex);
   }, 5000);
 </script>
 
 </body>
 </html>
-
