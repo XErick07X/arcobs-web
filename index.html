@@ -124,7 +124,7 @@
       }
     }
 
-    /* Slider */
+    /* SLIDER DE IMÁGENES */
     .slider {
       position: relative;
       max-width: 1000px;
@@ -140,16 +140,16 @@
       display: flex;
       transition: transform 0.5s ease;
       width: 400%;
+      height: 100%;
     }
     .slide {
       width: 100%;
       flex-shrink: 0;
-      box-sizing: border-box;
-      text-align: center;
+      height: 100%;
     }
     .slide img {
       width: 100%;
-      height: 400px;
+      height: 100%;
       object-fit: cover;
     }
     .arrow {
@@ -170,8 +170,12 @@
       background: rgba(0,255,153,0.8);
       color: #000;
     }
-    .arrow.left { left: 10px; }
-    .arrow.right { right: 10px; }
+    .arrow.left {
+      left: 10px;
+    }
+    .arrow.right {
+      right: 10px;
+    }
     .dots {
       text-align: center;
       padding: 15px 0 20px 0;
@@ -207,8 +211,8 @@
   <a href="#contacto">Contacto</a>
 </nav>
 
-<!-- Slider con 4 imágenes -->
-<div class="slider" id="slider">
+<!-- SLIDER DE 4 IMÁGENES -->
+<div class="slider">
   <div class="slides" id="slides">
     <div class="slide"><img src="imagen1.jpg" alt="Imagen 1" /></div>
     <div class="slide"><img src="imagen2.jpg" alt="Imagen 2" /></div>
@@ -225,47 +229,43 @@
   </div>
 </div>
 
-<!-- CONTINÚA TU CONTENIDO AQUÍ -->
-<!-- puedes copiar y pegar las demás secciones que ya tienes como #servicios, #quienes-somos, #testimonios y #contacto -->
+<section id="quienes-somos">
+  <h2>¿Quiénes Somos?</h2>
+  <p>En ARCOB S.A., nos especializamos en la recuperación de cartera comercial a través de gestión telefónica profesional. Nuestro equipo altamente capacitado trabaja con eficiencia, ética y discreción para recuperar sus cuentas pendientes sin comprometer la relación con sus clientes.</p>
+</section>
+
+<section id="servicios">
+  <h2>Servicios</h2>
+  <ul>
+    <li>Gestión de cobranza preventiva y judicial vía telefónica</li>
+    <li>Seguimiento personalizado de cuentas morosas</li>
+    <li>Informes periódicos de resultados</li>
+    <li>Estrategias de contacto adaptadas al perfil del deudor</li>
+  </ul>
+  <a href="https://wa.me/593981500798?text=Hola%2C%20estoy%20interesado%20en%20una%20cotizaci%C3%B3n%20de%20sus%20servicios." class="btn" target="_blank">Solicitar una Cotización</a>
+</section>
+
+<section id="testimonios">
+  <h2>Testimonios</h2>
+  <blockquote>"Gracias a ARCOB S.A. logramos recuperar el 92% de nuestra cartera vencida en menos de tres meses, siempre con respeto hacia nuestros clientes."</blockquote>
+  <p>- Corporación Inversiones Altamira</p>
+
+  <blockquote>"El equipo de ARCOB S.A. demostró gran profesionalismo y discreción, ayudándonos a mantener excelentes relaciones comerciales durante el proceso de cobranza."</blockquote>
+  <p>- Servicios Financieros Andina</p>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p><strong>Email:</strong> contacto@arcobsa.com</p>
+  <p><strong>Teléfono:</strong> 0981500798</p>
+  <p><strong>Dirección:</strong> Guayaquil, Ecuador</p>
+
+  <div class="social-container">
+    <a href="https://wa.me/593981500798" target="_blank" class="social-link">WhatsApp</a>
+    <a href="https://instagram.com/arcob_sa" target="_blank" class="social-link">Instagram</a>
+  </div>
+</section>
 
 <footer>
   &copy; 2025 ARCOB S.A. - Todos los derechos reservados.
-</footer>
-
-<script>
-  const slides = document.getElementById('slides');
-  const dots = document.getElementById('dots').children;
-  const slider = document.getElementById('slider');
-  let currentIndex = 0;
-  let autoSlide;
-
-  function showSlide(index) {
-    if (index < 0) index = dots.length - 1;
-    if (index >= dots.length) index = 0;
-    currentIndex = index;
-    slides.style.transform = 'translateX(' + (-index * 100) + '%)';
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].classList.remove('active');
-    }
-    dots[index].classList.add('active');
-  }
-
-  function prevSlide() { showSlide(currentIndex - 1); }
-  function nextSlide() { showSlide(currentIndex + 1); }
-  function goToSlide(index) { showSlide(index); }
-
-  function startAutoSlide() {
-    autoSlide = setInterval(() => {
-      nextSlide();
-    }, 8000);
-  }
-
-  slider.addEventListener('mouseenter', () => clearInterval(autoSlide));
-  slider.addEventListener('mouseleave', startAutoSlide);
-
-  showSlide(0);
-  startAutoSlide();
-</script>
-
-</body>
-</html>
+</foot
