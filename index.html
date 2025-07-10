@@ -36,8 +36,6 @@
       background-color: #101010;
       padding: 15px;
       text-align: center;
-      width: 100%; /* Asegura que el menú abarque todo el ancho */
-      position: relative; /* Para que el menú se mantenga en su lugar */
     }
     nav a {
       color: #00ff99;
@@ -92,12 +90,6 @@
     .social-link:hover {
       color: #00ff99;
     }
-    .social-link svg {
-      width: 24px;
-      height: 24px;
-      fill: #00ff99;
-      transition: fill 0.3s ease;
-    }
     .social-container {
       margin-top: 15px;
     }
@@ -108,10 +100,6 @@
       padding: 15px 20px;
       font-style: italic;
       color: #aaffcc;
-      transition: background-color 0.3s ease;
-    }
-    #testimonios blockquote:hover {
-      background-color: #1a1a1a;
     }
     @media (max-width: 600px) {
       nav a {
@@ -127,82 +115,80 @@
     }
 
     /* SLIDER DE IMÁGENES */
-    .slider {
+    .slide-container {
       position: relative;
-      max-width: 100%; /* Asegura que el slider abarque todo el ancho */
-      height: 400px; /* Puedes ajustar esta altura según tus necesidades */
+      width: 800px;
+      height: 350px;
+      border: 3px solid #ede6d6;
+      box-shadow: 0 0 8px 2px rgba(0,0,0,0.2);
       margin: 40px auto;
       overflow: hidden;
-      background: #111;
-      color: #d3f7e8;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,255,153,0.4);
     }
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease;
-      width: 400%;
-      height: auto; /* Permite que el contenedor se ajuste a la altura de la imagen */
-    }
-    .slide {
-      width: 100%;
-      flex-shrink: 0;
-    }
-    .slide img {
+    .slides img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Cambiado de cover a contain */
-      display: block; /* Asegura que no haya espacio debajo de la imagen */
-      margin: auto; /* Centra la imagen dentro del contenedor */
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
     }
-    .arrow {
+    .slides img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    .buttons span {
       position: absolute;
       top: 50%;
-      font-size: 2.8em;
-      color: #00ff99;
-      cursor: pointer;
-      user-select: none;
       transform: translateY(-50%);
-      padding: 0 10px;
-      background: rgba(0,0,0,0.3);
-      border-radius: 50%;
-      transition: background-color 0.3s ease;
-      z-index: 10;
+      padding: 14px;
+      color: #eee;
+      font-size: 24px;
+      font-weight: bold;
+      transition: 0.5s;
+      border-radius: 3px;
+      user-select: none;
+      cursor: pointer;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.5);
     }
-    .arrow:hover {
-      background: rgba(0,255,153,0.8);
-      color: #000;
+    .buttons .next {
+      right: 20px;
     }
-    .arrow.left {
-      left: 10px;
+    .buttons .prev {
+      left: 20px;
     }
-    .arrow.right {
-      right: 10px;
+    .buttons span:hover {
+      background-color: #ede6d6;
+      color: #222;
     }
-    .dots {
-      text-align: center;
-      padding: 15px 0 20px 0;
+    .dotsContainer {
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+      z-index: 3;
     }
     .dot {
-      display: inline-block;
-      height: 14px;
-      width: 14px;
-      margin: 0 7px;
-      background: #555;
+      width: 15px;
+      height: 15px;
+      border: 2px solid #bbb;
       border-radius: 50%;
+      background-color: #000;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
     .dot.active {
-      background: #00ff99;
-      box-shadow: 0 0 8px #00ff99;
+      background-color: #00ff99;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="logo.png" alt="Logo ARCOB S.A." title="ARCOB S.A." />
+  <img src="logo.png" alt="Logo ARCOB S.A." />
   <h1>ARCOB S.A.</h1>
   <p>SERVICIO DE COBRANZA EMPRESARIAL</p>
 </header>
@@ -214,21 +200,23 @@
   <a href="#contacto">Contacto</a>
 </nav>
 
-<!-- SLIDER DE 4 IMÁGENES -->
-<div class="slider">
-  <div class="slides" id="slides">
-    <div class="slide"><img src="imagen1.jpg" alt="Imagen 1" /></div>
-    <div class="slide"><img src="imagen2.jpg" alt="Imagen 2" /></div>
-    <div class="slide"><img src="imagen3.jpg" alt="Imagen 3" /></div>
-    <div class="slide"><img src="imagen4.jpg" alt="Imagen 4" /></div>
+<!-- SLIDER -->
+<div class="slide-container">
+  <div class="slides">
+    <img src="imagen1.jpg" class="active">
+    <img src="imagen2.jpg">
+    <img src="imagen3.jpg">
+    <img src="imagen4.jpg">
   </div>
-  <span class="arrow left" onclick="prevSlide()">&#10094;</span>
-  <span class="arrow right" onclick="nextSlide()">&#10095;</span>
-  <div class="dots" id="dots">
-    <span class="dot active" onclick="goToSlide(0)"></span>
-    <span class="dot" onclick="goToSlide(1)"></span>
-    <span class="dot" onclick="goToSlide(2)"></span>
-    <span class="dot" onclick="goToSlide(3)"></span>
+  <div class="buttons">
+    <span class="prev">&#10094;</span>
+    <span class="next">&#10095;</span>
+  </div>
+  <div class="dotsContainer">
+    <span class="dot active" onclick="showSlide(0)"></span>
+    <span class="dot" onclick="showSlide(1)"></span>
+    <span class="dot" onclick="showSlide(2)"></span>
+    <span class="dot" onclick="showSlide(3)"></span>
   </div>
 </div>
 
@@ -252,7 +240,6 @@
   <h2>Testimonios</h2>
   <blockquote>"Gracias a ARCOB S.A. logramos recuperar el 92% de nuestra cartera vencida en menos de tres meses, siempre con respeto hacia nuestros clientes."</blockquote>
   <p>- Corporación Inversiones Altamira</p>
-
   <blockquote>"El equipo de ARCOB S.A. demostró gran profesionalismo y discreción, ayudándonos a mantener excelentes relaciones comerciales durante el proceso de cobranza."</blockquote>
   <p>- Servicios Financieros Andina</p>
 </section>
@@ -262,7 +249,6 @@
   <p><strong>Email:</strong> contacto@arcobsa.com</p>
   <p><strong>Teléfono:</strong> 0981500798</p>
   <p><strong>Dirección:</strong> Guayaquil, Ecuador</p>
-
   <div class="social-container">
     <a href="https://wa.me/593981500798" target="_blank" class="social-link">WhatsApp</a>
     <a href="https://instagram.com/arcob_sa" target="_blank" class="social-link">Instagram</a>
@@ -274,33 +260,33 @@
 </footer>
 
 <script>
-  const slides = document.getElementById('slides');
-  const dots = document.getElementById('dots').children;
-  let currentIndex = 0;
+  const slides = document.querySelectorAll('.slides img');
+  const dots = document.querySelectorAll('.dot');
+  const next = document.querySelector('.next');
+  const prev = document.querySelector('.prev');
+  let current = 0;
 
   function showSlide(index) {
-    if(index < 0) index = dots.length - 1;
-    if(index >= dots.length) index = 0;
-    currentIndex = index;
-    slides.style.transform = 'translateX(' + (-index * 100) + '%)';
-    for(let i=0; i<dots.length; i++){
-      dots[i].classList.remove('active');
-    }
-    dots[index].classList.add('active');
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
   }
 
-  function prevSlide(){
-    showSlide(currentIndex - 1);
-  }
-  function nextSlide(){
-    showSlide(currentIndex + 1);
-  }
-  function goToSlide(index){
-    showSlide(index);
-  }
+  next.addEventListener('click', () => {
+    let newIndex = (current + 1) % slides.length;
+    showSlide(newIndex);
+  });
+
+  prev.addEventListener('click', () => {
+    let newIndex = (current - 1 + slides.length) % slides.length;
+    showSlide(newIndex);
+  });
 
   setInterval(() => {
-    nextSlide();
+    let newIndex = (current + 1) % slides.length;
+    showSlide(newIndex);
   }, 5000);
 </script>
 
