@@ -274,7 +274,7 @@
 </section>
 
 <section id="servicios">
-  <h2>Servicios</h2>
+  <h2 style="color:#00ff99;">Servicios</h2>
   <ul>
     <li>Gestión de cobranza preventiva y judicial vía telefónica</li>
     <li>Seguimiento personalizado de cuentas morosas</li>
@@ -289,7 +289,7 @@
 </section>
 
 <section id="testimonios">
-  <h2>Testimonios</h2>
+  <h2 style="color:#00ff99;">Testimonios</h2>
   <blockquote>
     "Gracias a ARCOB S.A. logramos recuperar el 92% de nuestra cartera vencida en menos de tres meses, siempre con respeto hacia nuestros clientes."
   </blockquote>
@@ -301,18 +301,18 @@
 </section>
 
 <section id="contacto">
-  <h2>Contacto</h2>
+  <h2 style="color:#00ff99;">Contacto</h2>
   <p><strong>Email:</strong> contacto@arcobsa.com</p>
   <p><strong>Teléfono:</strong> 0981500798</p>
   <p><strong>Dirección:</strong> Guayaquil, Ecuador</p>
 
   <div class="social-container">
     <a href="https://wa.me/593981500798" target="_blank" class="social-link">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" width="24" height="24" style="filter: invert(59%) sepia(77%) saturate(386%) hue-rotate(101deg) brightness(100%) contrast(101%);">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339-12.6 205.8-31.5 121.6 52.7 66.7 107.6 57.7 186.3 96.6 248.5L64 352l108.7-32.6c61.2 36.5 139.5 28.2 190.3-22.6 84.2-84.2 65.3-217.4-17.1-268.3zm-82.3 188c-7.4 21-37.8 33.2-52.7 33.2-15.1 0-44.8-9.6-76.6-41.4s-41.4-61.5-41.4-76.6c0-14.9 12.2-45.3 33.2-52.7 9.7-3.4 14.8-1.7 20.2 5.2 4.7 6.2 16.2 23.4 17.7 25.7 3.4 5.6 2.3 10.4-1.2 13.9-4.6 4.5-9.5 11.3-13.4 15.2-4.5 4.5-5.3 8.3-2.3 13.6s12.6 20.8 27.2 35.4c14.6 14.6 27.2 23.1 35.4 27.2s9.1 2.2 13.6-2.3c3.9-3.9 10.7-8.8 15.2-13.4 3.6-3.6 8.4-4.6 13.9-1.2 2.3 1.5 19.5 13 25.7 17.7 6.8 5.4 8.6 10.5 5.2 20.2z"/></svg>
       Chatear por WhatsApp
     </a>
     <a href="https://instagram.com/arcob_sa" target="_blank" class="social-link">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="24" height="24" style="filter: invert(59%) sepia(77%) saturate(386%) hue-rotate(101deg) brightness(100%) contrast(101%);">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 186c-39.5 0-71.1-31.6-71.1-71.1S184.6 185.8 224.1 185.8s71.1 31.6 71.1 71.1-31.6 71.1-71.1 71.1zm146.4-194.3c0 14.1-11.5 25.6-25.6 25.6s-25.6-11.5-25.6-25.6S330.7 107 344.8 107s25.6 11.5 25.6 25.7zm76.1 25.7c-1.7-35.3-9.9-66.6-36.2-92.9s-57.6-34.5-92.9-36.2c-36.6-2.1-146.6-2.1-183.2 0-35.3 1.7-66.6 9.9-92.9 36.2S1.7 138.1 0 173.4c-2.1 36.6-2.1 146.6 0 183.2 1.7 35.3 9.9 66.6 36.2 92.9s57.6 34.5 92.9 36.2c36.6 2.1 146.6 2.1 183.2 0 35.3-1.7 66.6-9.9 92.9-36.2s34.5-57.6 36.2-92.9c2.1-36.6 2.1-146.6 0-183.2zM398.8 388c-7.8 19.6-22.9 34.7-42.5 42.5-29.4 11.7-99.2 9-132.3 9s-102.9 2.6-132.3-9c-19.6-7.8-34.7-22.9-42.5-42.5-11.7-29.4-9-99.2-9-132.3s-2.6-102.9 9-132.3c7.8-19.6 22.9-34.7 42.5-42.5 29.4-11.7 99.2-9 132.3-9s102.9-2.6 132.3 9c19.6 7.8 34.7 22.9 42.5 42.5 11.7 29.4 9 99.2 9 132.3s2.6 102.9-9 132.3z"/></svg>
       Visítanos en Instagram
     </a>
   </div>
@@ -321,30 +321,3 @@
 <footer>
   &copy; 2025 ARCOB S.A. - Todos los derechos reservados.
 </footer>
-
-<script>
-  const slides = document.getElementById('slides');
-  const dots = document.getElementById('dots').children;
-  let currentIndex = 0;
-
-  function showSlide(index) {
-    if(index < 0) index = dots.length - 1;
-    if(index >= dots.length) index = 0;
-    currentIndex = index;
-    slides.style.transform = 'translateX(' + (-index * 100) + '%)';
-    for(let i=0; i<dots.length; i++){
-      dots[i].classList.remove('active');
-    }
-    dots[index].classList.add('active');
-  }
-  function prevSlide(){ showSlide(currentIndex - 1); }
-  function nextSlide(){ showSlide(currentIndex + 1); }
-  function goToSlide(index){ showSlide(index); }
-
-  setInterval(() => {
-    nextSlide();
-  }, 5000);
-</script>
-
-</body>
-</html>
