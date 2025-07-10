@@ -37,8 +37,6 @@
       background-color: #101010;
       padding: 15px;
       text-align: center;
-      position: relative;
-      user-select: none;
     }
     nav a {
       color: #00ff99;
@@ -46,60 +44,10 @@
       margin: 0 15px;
       font-weight: bold;
       transition: color 0.3s ease;
-      cursor: pointer;
     }
     nav a:hover {
       color: #66ffb3;
     }
-
-    /* Dropdown container */
-    .dropdown {
-      display: inline-block;
-      position: relative;
-      margin: 0 15px;
-    }
-    .dropdown > a::after {
-      content: " ▼";
-      font-size: 0.6em;
-    }
-
-    /* Dropdown menu */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #101010;
-      min-width: 260px;
-      padding: 10px;
-      box-shadow: 0 4px 8px rgba(0,255,153,0.5);
-      border-radius: 6px;
-      top: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 100;
-      text-align: center;
-    }
-    /* Mostrar dropdown al hover */
-    .dropdown:hover .dropdown-content {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* Imagenes dentro del dropdown */
-    .dropdown-content img {
-      width: 110px;
-      height: auto;
-      border-radius: 6px;
-      box-shadow: 0 0 8px #00ff99;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .dropdown-content img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px #00cc7a;
-    }
-
     section {
       padding: 40px 20px;
       max-width: 1000px;
@@ -169,20 +117,12 @@
     }
     /* Responsive */
     @media (max-width: 600px) {
-      nav a, .dropdown {
+      nav a {
         display: block;
         margin: 10px 0;
       }
-      .dropdown-content {
-        position: static;
-        transform: none;
-        box-shadow: none;
-        flex-direction: row;
-        justify-content: center;
-        padding: 10px 0;
-      }
-      .dropdown-content img {
-        width: 90px;
+      .social-link {
+        font-size: 14px;
       }
       header img {
         width: 140px;
@@ -296,17 +236,6 @@
 <nav>
   <a href="#servicios">Servicios</a>
   <a href="#quienes-somos">Quiénes Somos</a>
-
-  <div class="dropdown">
-    <a href="javascript:void(0)">Galería</a>
-    <div class="dropdown-content">
-      <img src="imagen1.jpg" alt="Imagen 1" title="Imagen 1" />
-      <img src="imagen2.jpg" alt="Imagen 2" title="Imagen 2" />
-      <img src="imagen3.jpg" alt="Imagen 3" title="Imagen 3" />
-      <img src="imagen4.jpg" alt="Imagen 4" title="Imagen 4" />
-    </div>
-  </div>
-
   <a href="#testimonios">Testimonios</a>
   <a href="#contacto">Contacto</a>
 </nav>
@@ -315,21 +244,24 @@
 <div class="slider">
   <div class="slides" id="slides">
     <div class="slide">
-      <img src="logo.png" alt="Logo ARCOB S.A." />
+      <img src="imagen1.jpg" alt="Imagen 1" />
       <h2>Brindamos servicio integral en confianza</h2>
       <a href="#contacto" class="button">Contáctanos</a>
     </div>
     <div class="slide">
+      <img src="imagen2.jpg" alt="Imagen 2" />
       <h2><a href="#servicios" style="color:#00ff99; text-decoration:none;">Gestión telefónica</a></h2>
       <p>Recuperamos su cartera comercial de manera profesional y ética.</p>
       <a href="#servicios" class="button">Ver más</a>
     </div>
     <div class="slide">
+      <img src="imagen3.jpg" alt="Imagen 3" />
       <h2><a href="#quienes-somos" style="color:#00ff99; text-decoration:none;">Equipo capacitado</a></h2>
       <p>Profesionales con experiencia en cobranza efectiva y discreta.</p>
       <a href="#quienes-somos" class="button">Conócenos</a>
     </div>
     <div class="slide">
+      <img src="imagen4.jpg" alt="Imagen 4" />
       <h2><a href="#contacto" style="color:#00ff99; text-decoration:none;">Cotiza con nosotros</a></h2>
       <p>Solicita una cotización personalizada y sin compromiso.</p>
       <a href="#contacto" class="button">Cotizar</a>
@@ -416,4 +348,49 @@
       <!-- Instagram SVG Icon -->
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path
-          d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-
+          d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.375 1.5a1.125 1.125 0 110 2.25 1.125 1.125 0 010-2.25zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"
+        />
+      </svg>
+      Visítanos en Instagram
+    </a>
+  </div>
+
+</section>
+
+<footer>
+  &copy; 2025 ARCOB S.A. - Todos los derechos reservados.
+</footer>
+
+<script>
+  const slides = document.getElementById('slides');
+  const dots = document.getElementById('dots').children;
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    if(index < 0) index = dots.length - 1;
+    if(index >= dots.length) index = 0;
+    currentIndex = index;
+    slides.style.transform = 'translateX(' + (-index * 100) + '%)';
+    for(let i=0; i<dots.length; i++){
+      dots[i].classList.remove('active');
+    }
+    dots[index].classList.add('active');
+  }
+  function prevSlide(){
+    showSlide(currentIndex - 1);
+  }
+  function nextSlide(){
+    showSlide(currentIndex + 1);
+  }
+  function goToSlide(index){
+    showSlide(index);
+  }
+
+  // Auto-slide cada 5 segundos
+  setInterval(() => {
+    nextSlide();
+  }, 5000);
+</script>
+
+</body>
+</html>
