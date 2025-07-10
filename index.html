@@ -60,6 +60,7 @@
       font-size: 14px;
       color: #ccc;
     }
+
     /* Botones */
     .btn {
       background-color: #00ff99;
@@ -78,6 +79,7 @@
       background-color: #00cc7a;
       color: #fff;
     }
+
     /* Redes sociales */
     .social-link {
       display: inline-flex;
@@ -102,6 +104,7 @@
     .social-container {
       margin-top: 15px;
     }
+
     /* Testimonios */
     #testimonios blockquote {
       background-color: #101010;
@@ -115,24 +118,12 @@
     #testimonios blockquote:hover {
       background-color: #1a1a1a;
     }
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 10px 0;
-      }
-      .social-link {
-        font-size: 14px;
-      }
-      header img {
-        width: 140px;
-      }
-    }
 
     /* Slider styles */
     .slider {
       position: relative;
       max-width: 1000px;
+      height: 400px;
       margin: 40px auto;
       overflow: hidden;
       background: #111;
@@ -144,17 +135,25 @@
       display: flex;
       transition: transform 0.5s ease;
       width: 400%;
+      height: 100%;
     }
     .slide {
       width: 100%;
+      height: 100%;
       flex-shrink: 0;
-      padding: 40px 30px;
       box-sizing: border-box;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
     }
     .slide img {
-      max-width: 220px;
-      margin-bottom: 20px;
+      max-height: 200px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 15px;
       filter: brightness(0.9);
     }
     .slide h2 {
@@ -181,6 +180,7 @@
       background-color: #00cc7a;
       color: #fff;
     }
+
     .arrow {
       position: absolute;
       top: 50%;
@@ -223,6 +223,26 @@
       background: #00ff99;
       box-shadow: 0 0 8px #00ff99;
     }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      .social-link {
+        font-size: 14px;
+      }
+      header img {
+        width: 140px;
+      }
+      .slider {
+        height: 320px;
+      }
+      .slide img {
+        max-height: 150px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -240,7 +260,7 @@
   <a href="#contacto">Contacto</a>
 </nav>
 
-<!-- Slider agregado -->
+<!-- Slider -->
 <div class="slider">
   <div class="slides" id="slides">
     <div class="slide">
@@ -277,90 +297,9 @@
   </div>
 </div>
 
-<section id="quienes-somos">
-  <h2>¿Quiénes Somos?</h2>
-  <p>
-    En ARCOB S.A., nos especializamos en la recuperación de cartera comercial a
-    través de gestión telefónica profesional. Nuestro equipo altamente
-    capacitado trabaja con eficiencia, ética y discreción para recuperar sus
-    cuentas pendientes sin comprometer la relación con sus clientes.
-  </p>
-</section>
+<!-- Aquí continúa con las secciones "quienes-somos", "servicios", etc. que ya tienes igual -->
 
-<section id="servicios">
-  <h2>Servicios</h2>
-  <ul>
-    <li>Gestión de cobranza preventiva y judicial vía telefónica</li>
-    <li>Seguimiento personalizado de cuentas morosas</li>
-    <li>Informes periódicos de resultados</li>
-    <li>Estrategias de contacto adaptadas al perfil del deudor</li>
-  </ul>
-  <a
-    href="https://wa.me/593981500798?text=Hola%2C%20estoy%20interesado%20en%20una%20cotizaci%C3%B3n%20de%20sus%20servicios."
-    class="btn"
-    target="_blank"
-    >Solicitar una Cotización</a
-  >
-</section>
-
-<section id="testimonios">
-  <h2>Testimonios</h2>
-  <blockquote>
-    "Gracias a ARCOB S.A. logramos recuperar el 92% de nuestra cartera vencida en menos de tres meses, siempre con respeto hacia nuestros clientes."
-  </blockquote>
-  <p>- Corporación Inversiones Altamira</p>
-
-  <blockquote>
-    "El equipo de ARCOB S.A. demostró gran profesionalismo y discreción, ayudándonos a mantener excelentes relaciones comerciales durante el proceso de cobranza."
-  </blockquote>
-  <p>- Servicios Financieros Andina</p>
-</section>
-
-<section id="contacto">
-  <h2>Contacto</h2>
-  <p><strong>Email:</strong> contacto@arcobsa.com</p>
-  <p><strong>Teléfono:</strong> 0981500798</p>
-  <p><strong>Dirección:</strong> Guayaquil, Ecuador</p>
-
-  <!-- Redes sociales -->
-  <div class="social-container">
-    <a
-      href="https://wa.me/593981500798"
-      target="_blank"
-      class="social-link"
-      aria-label="Chatear por WhatsApp"
-      >
-      <!-- WhatsApp SVG Icon -->
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          d="M20.52 3.48A11.908 11.908 0 0012 0C5.373 0 0 5.373 0 12c0 2.113.555 4.126 1.606 5.897L0 24l6.299-1.618A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.203-1.25-6.213-3.48-8.52zM12 22c-1.907 0-3.71-.55-5.233-1.5l-.373-.227-3.727.958.995-3.633-.242-.378A9.018 9.018 0 013 12c0-4.962 4.038-9 9-9 2.398 0 4.643.933 6.324 2.624A8.954 8.954 0 0121 12c0 4.962-4.038 9-9 9zm5.333-7.813c-.227-.113-1.342-.663-1.55-.738-.208-.076-.36-.113-.512.114-.151.227-.585.738-.718.89-.132.151-.263.17-.49.057-.227-.113-.956-.352-1.822-1.126-.675-.6-1.132-1.342-1.265-1.569-.132-.227-.014-.35.1-.463.103-.102.227-.264.34-.397.114-.132.151-.227.227-.379.076-.151.038-.284-.019-.397-.057-.113-.512-1.236-.7-1.692-.184-.442-.37-.382-.512-.39l-.436-.008c-.151 0-.397.057-.605.284-.208.227-.792.774-.792 1.886 0 1.113.81 2.188.923 2.343.114.151 1.594 2.43 3.86 3.407.54.233.96.372 1.288.477.54.17 1.03.145 1.418.088.433-.057 1.342-.547 1.532-1.078.19-.53.19-.984.132-1.078-.057-.092-.208-.15-.435-.263z"
-        />
-      </svg>
-      Chatear por WhatsApp
-    </a>
-
-    <a
-      href="https://instagram.com/arcob_sa"
-      target="_blank"
-      class="social-link"
-      aria-label="Visitar Instagram"
-      >
-      <!-- Instagram SVG Icon -->
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.375 1.5a1.125 1.125 0 110 2.25 1.125 1.125 0 010-2.25zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"
-        />
-      </svg>
-      Visítanos en Instagram
-    </a>
-  </div>
-
-</section>
-
-<footer>
-  &copy; 2025 ARCOB S.A. - Todos los derechos reservados.
-</footer>
-
+<!-- Tu mismo JavaScript -->
 <script>
   const slides = document.getElementById('slides');
   const dots = document.getElementById('dots').children;
@@ -376,20 +315,11 @@
     }
     dots[index].classList.add('active');
   }
-  function prevSlide(){
-    showSlide(currentIndex - 1);
-  }
-  function nextSlide(){
-    showSlide(currentIndex + 1);
-  }
-  function goToSlide(index){
-    showSlide(index);
-  }
+  function prevSlide(){ showSlide(currentIndex - 1); }
+  function nextSlide(){ showSlide(currentIndex + 1); }
+  function goToSlide(index){ showSlide(index); }
 
-  // Auto-slide cada 5 segundos
-  setInterval(() => {
-    nextSlide();
-  }, 5000);
+  setInterval(() => { nextSlide(); }, 5000);
 </script>
 
 </body>
