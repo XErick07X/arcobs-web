@@ -7,7 +7,6 @@
   <meta name="description" content="ARCOB S.A. servicio profesional de cobranza empresarial en Ecuador. Recuperación eficiente de cartera comercial con ética y discreción." />
   <meta name="keywords" content="Cobranza, cobranza empresarial, gestión telefónica, recuperación de cartera, Ecuador" />
   <style>
-    /* Reset y básicos */
     body {
       font-family: Arial, sans-serif;
       background-color: #000;
@@ -60,7 +59,6 @@
       font-size: 14px;
       color: #ccc;
     }
-    /* Botones */
     .btn {
       background-color: #00ff99;
       color: #000;
@@ -78,7 +76,6 @@
       background-color: #00cc7a;
       color: #fff;
     }
-    /* Redes sociales */
     .social-link {
       display: inline-flex;
       align-items: center;
@@ -102,7 +99,6 @@
     .social-container {
       margin-top: 15px;
     }
-    /* Testimonios */
     #testimonios blockquote {
       background-color: #101010;
       border-left: 5px solid #00ff99;
@@ -115,7 +111,6 @@
     #testimonios blockquote:hover {
       background-color: #1a1a1a;
     }
-    /* Responsive */
     @media (max-width: 600px) {
       nav a {
         display: block;
@@ -129,10 +124,11 @@
       }
     }
 
-    /* Slider styles */
+    /* Slider */
     .slider {
       position: relative;
       max-width: 1000px;
+      height: 400px;
       margin: 40px auto;
       overflow: hidden;
       background: #111;
@@ -148,38 +144,13 @@
     .slide {
       width: 100%;
       flex-shrink: 0;
-      padding: 40px 30px;
       box-sizing: border-box;
       text-align: center;
     }
     .slide img {
-      max-width: 220px;
-      margin-bottom: 20px;
-      filter: brightness(0.9);
-    }
-    .slide h2 {
-      color: #00ff99;
-      margin-bottom: 10px;
-      font-size: 1.8em;
-    }
-    .slide p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-      color: #aaffcc;
-    }
-    .slide a.button {
-      display: inline-block;
-      background-color: #00ff99;
-      color: #000;
-      padding: 12px 28px;
-      border-radius: 5px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .slide a.button:hover {
-      background-color: #00cc7a;
-      color: #fff;
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
     }
     .arrow {
       position: absolute;
@@ -199,12 +170,8 @@
       background: rgba(0,255,153,0.8);
       color: #000;
     }
-    .arrow.left {
-      left: 10px;
-    }
-    .arrow.right {
-      right: 10px;
-    }
+    .arrow.left { left: 10px; }
+    .arrow.right { right: 10px; }
     .dots {
       text-align: center;
       padding: 15px 0 20px 0;
@@ -240,32 +207,13 @@
   <a href="#contacto">Contacto</a>
 </nav>
 
-<!-- Slider agregado -->
-<div class="slider">
+<!-- Slider con 4 imágenes -->
+<div class="slider" id="slider">
   <div class="slides" id="slides">
-    <div class="slide">
-      <img src="imagen1.jpg" alt="Imagen 1" />
-      <h2>Brindamos servicio integral en confianza</h2>
-      <a href="#contacto" class="button">Contáctanos</a>
-    </div>
-    <div class="slide">
-      <img src="imagen2.jpg" alt="Imagen 2" />
-      <h2><a href="#servicios" style="color:#00ff99; text-decoration:none;">Gestión telefónica</a></h2>
-      <p>Recuperamos su cartera comercial de manera profesional y ética.</p>
-      <a href="#servicios" class="button">Ver más</a>
-    </div>
-    <div class="slide">
-      <img src="imagen3.jpg" alt="Imagen 3" />
-      <h2><a href="#quienes-somos" style="color:#00ff99; text-decoration:none;">Equipo capacitado</a></h2>
-      <p>Profesionales con experiencia en cobranza efectiva y discreta.</p>
-      <a href="#quienes-somos" class="button">Conócenos</a>
-    </div>
-    <div class="slide">
-      <img src="imagen4.jpg" alt="Imagen 4" />
-      <h2><a href="#contacto" style="color:#00ff99; text-decoration:none;">Cotiza con nosotros</a></h2>
-      <p>Solicita una cotización personalizada y sin compromiso.</p>
-      <a href="#contacto" class="button">Cotizar</a>
-    </div>
+    <div class="slide"><img src="imagen1.jpg" alt="Imagen 1" /></div>
+    <div class="slide"><img src="imagen2.jpg" alt="Imagen 2" /></div>
+    <div class="slide"><img src="imagen3.jpg" alt="Imagen 3" /></div>
+    <div class="slide"><img src="imagen4.jpg" alt="Imagen 4" /></div>
   </div>
   <span class="arrow left" onclick="prevSlide()">&#10094;</span>
   <span class="arrow right" onclick="nextSlide()">&#10095;</span>
@@ -277,85 +225,8 @@
   </div>
 </div>
 
-<section id="quienes-somos">
-  <h2>¿Quiénes Somos?</h2>
-  <p>
-    En ARCOB S.A., nos especializamos en la recuperación de cartera comercial a
-    través de gestión telefónica profesional. Nuestro equipo altamente
-    capacitado trabaja con eficiencia, ética y discreción para recuperar sus
-    cuentas pendientes sin comprometer la relación con sus clientes.
-  </p>
-</section>
-
-<section id="servicios">
-  <h2>Servicios</h2>
-  <ul>
-    <li>Gestión de cobranza preventiva y judicial vía telefónica</li>
-    <li>Seguimiento personalizado de cuentas morosas</li>
-    <li>Informes periódicos de resultados</li>
-    <li>Estrategias de contacto adaptadas al perfil del deudor</li>
-  </ul>
-  <a
-    href="https://wa.me/593981500798?text=Hola%2C%20estoy%20interesado%20en%20una%20cotizaci%C3%B3n%20de%20sus%20servicios."
-    class="btn"
-    target="_blank"
-    >Solicitar una Cotización</a
-  >
-</section>
-
-<section id="testimonios">
-  <h2>Testimonios</h2>
-  <blockquote>
-    "Gracias a ARCOB S.A. logramos recuperar el 92% de nuestra cartera vencida en menos de tres meses, siempre con respeto hacia nuestros clientes."
-  </blockquote>
-  <p>- Corporación Inversiones Altamira</p>
-
-  <blockquote>
-    "El equipo de ARCOB S.A. demostró gran profesionalismo y discreción, ayudándonos a mantener excelentes relaciones comerciales durante el proceso de cobranza."
-  </blockquote>
-  <p>- Servicios Financieros Andina</p>
-</section>
-
-<section id="contacto">
-  <h2>Contacto</h2>
-  <p><strong>Email:</strong> contacto@arcobsa.com</p>
-  <p><strong>Teléfono:</strong> 0981500798</p>
-  <p><strong>Dirección:</strong> Guayaquil, Ecuador</p>
-
-  <!-- Redes sociales -->
-  <div class="social-container">
-    <a
-      href="https://wa.me/593981500798"
-      target="_blank"
-      class="social-link"
-      aria-label="Chatear por WhatsApp"
-      >
-      <!-- WhatsApp SVG Icon -->
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          d="M20.52 3.48A11.908 11.908 0 0012 0C5.373 0 0 5.373 0 12c0 2.113.555 4.126 1.606 5.897L0 24l6.299-1.618A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12 0-3.203-1.25-6.213-3.48-8.52zM12 22c-1.907 0-3.71-.55-5.233-1.5l-.373-.227-3.727.958.995-3.633-.242-.378A9.018 9.018 0 013 12c0-4.962 4.038-9 9-9 2.398 0 4.643.933 6.324 2.624A8.954 8.954 0 0121 12c0 4.962-4.038 9-9 9zm5.333-7.813c-.227-.113-1.342-.663-1.55-.738-.208-.076-.36-.113-.512.114-.151.227-.585.738-.718.89-.132.151-.263.17-.49.057-.227-.113-.956-.352-1.822-1.126-.675-.6-1.132-1.342-1.265-1.569-.132-.227-.014-.35.1-.463.103-.102.227-.264.34-.397.114-.132.151-.227.227-.379.076-.151.038-.284-.019-.397-.057-.113-.512-1.236-.7-1.692-.184-.442-.37-.382-.512-.39l-.436-.008c-.151 0-.397.057-.605.284-.208.227-.792.774-.792 1.886 0 1.113.81 2.188.923 2.343.114.151 1.594 2.43 3.86 3.407.54.233.96.372 1.288.477.54.17 1.03.145 1.418.088.433-.057 1.342-.547 1.532-1.078.19-.53.19-.984.132-1.078-.057-.092-.208-.15-.435-.263z"
-        />
-      </svg>
-      Chatear por WhatsApp
-    </a>
-
-    <a
-      href="https://instagram.com/arcob_sa"
-      target="_blank"
-      class="social-link"
-      aria-label="Visitar Instagram"
-      >
-      <!-- Instagram SVG Icon -->
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.375 1.5a1.125 1.125 0 110 2.25 1.125 1.125 0 010-2.25zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"
-        />
-      </svg>
-      Visítanos en Instagram
-    </a>
-  </div>
-
-</section>
+<!-- CONTINÚA TU CONTENIDO AQUÍ -->
+<!-- puedes copiar y pegar las demás secciones que ya tienes como #servicios, #quienes-somos, #testimonios y #contacto -->
 
 <footer>
   &copy; 2025 ARCOB S.A. - Todos los derechos reservados.
@@ -364,32 +235,36 @@
 <script>
   const slides = document.getElementById('slides');
   const dots = document.getElementById('dots').children;
+  const slider = document.getElementById('slider');
   let currentIndex = 0;
+  let autoSlide;
 
   function showSlide(index) {
-    if(index < 0) index = dots.length - 1;
-    if(index >= dots.length) index = 0;
+    if (index < 0) index = dots.length - 1;
+    if (index >= dots.length) index = 0;
     currentIndex = index;
     slides.style.transform = 'translateX(' + (-index * 100) + '%)';
-    for(let i=0; i<dots.length; i++){
+    for (let i = 0; i < dots.length; i++) {
       dots[i].classList.remove('active');
     }
     dots[index].classList.add('active');
   }
-  function prevSlide(){
-    showSlide(currentIndex - 1);
-  }
-  function nextSlide(){
-    showSlide(currentIndex + 1);
-  }
-  function goToSlide(index){
-    showSlide(index);
+
+  function prevSlide() { showSlide(currentIndex - 1); }
+  function nextSlide() { showSlide(currentIndex + 1); }
+  function goToSlide(index) { showSlide(index); }
+
+  function startAutoSlide() {
+    autoSlide = setInterval(() => {
+      nextSlide();
+    }, 8000);
   }
 
-  // Auto-slide cada 5 segundos
-  setInterval(() => {
-    nextSlide();
-  }, 5000);
+  slider.addEventListener('mouseenter', () => clearInterval(autoSlide));
+  slider.addEventListener('mouseleave', startAutoSlide);
+
+  showSlide(0);
+  startAutoSlide();
 </script>
 
 </body>
